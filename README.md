@@ -17,8 +17,8 @@
 This project contains the source code of some application-independent libraries
 that are used as building blocks by the FEDEM solvers and also the FEDEM GUI.
 It is therefore consumed as a submodule both in
-[fedem-solvers](https://github.com/openfedem/fedem-solvers) and in
-[fedem-gui](https://github.com/openfedem/fedem-gui).
+[fedem-solvers](https://github.com/norcompute/fedem-solvers) and in
+[fedem-gui](https://github.com/norcompute/fedem-gui).
 
 ### Name convention
 
@@ -44,10 +44,10 @@ respectively.
 ## Requirements and Setup
 
 The build of the FEDEM foundation libraries will normally be handled by the respective
-supermodules ([fedem-solvers](https://github.com/openfedem/fedem-solvers) and
-[fedem-gui](https://github.com/openfedem/fedem-gui)). However, it is also
+supermodules ([fedem-solvers](https://github.com/norcompute/fedem-solvers) and
+[fedem-gui](https://github.com/norcompute/fedem-gui)). However, it is also
 possible to build them separately, for instance to perform some local testing, etc.
-To facilitate this, the [cmake-modules](https://github.com/openfedem/cmake-modules)
+To facilitate this, the [cmake-modules](https://github.com/norcompute/fedem-cmake-modules)
 repository is included via submodule reference, to provide the compiler setup.
 
 We use the packages [googletest](https://github.com/google/googletest) and
@@ -73,7 +73,7 @@ add the command-line option `-DUSE_FORTRAN=ON` to the cmake command above.
 ## Contributing
 
 This project is open to feature requests, suggestions, bug reports, etc.,
-via [GitHub issues](https://github.com/openfedem/fedem-foundation/issues).
+via [GitHub issues](https://github.com/norcompute/fedem-foundation/issues).
 Contributions and feedback are encouraged and always welcome.
 For more information about how to contribute,
 see our [Contribution Guidelines](.github/CONTRIBUTING.md).
