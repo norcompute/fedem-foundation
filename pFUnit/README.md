@@ -47,24 +47,24 @@ On Windows, we build and install the googletest framework from the sources:
   Download the zip'ed source code found there.
 
 - Unzip the downloaded `googletest-1.14.0.zip` file in arbitrary location,
-  e.g., `%USERPROFILE%\Fedem-src\googletest-1.14.0`.
+  e.g., `%USERPROFILE%\fedem-src\googletest-1.14.0`.
 
-- With Visual Studio 2019, configure googletest by running the following
+- With Visual Studio 2022, configure googletest by running the following
   commands from a DOS shell (put this in a bat-file for the convenience):
 
       @echo off
       title googletest configuration
-      call "%VS2019INSTALLDIR%\VC\Auxiliary\Build\vcvarsall.bat" x64
-      "%VS2019INSTALLDIR%\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" ^
-      -G "Visual Studio 16 2019" ^
-      -S %USERPROFILE%\Fedem-src\googletest-1.14.0 ^
-      -B %USERPROFILE%\Fedem-build\googletest ^
+      call <vs_install_dir>\VC\Auxiliary\Build\vcvarsall.bat" x64
+      "<vs_install_dir>\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" ^
+      -G "Visual Studio 17 2022" ^
+      -S %USERPROFILE%\fedem-src\googletest-1.14.0 ^
+      -B %USERPROFILE%\fedem-build\googletest ^
       -DCMAKE_INSTALL_PREFIX=C:\googletest ^
       -DBUILD_GMOCK=OFF ^
       -Dgtest_force_shared_crt=ON
       pause
 
-- Open the generated solution file `%USERPROFILE%\Fedem-build\googletest\googletest-distribution.sln`
+- Open the generated solution file `%USERPROFILE%\fedem-build\googletest\googletest-distribution.sln`
   in Visual Studio and build the `INSTALL` target for `Release` configuration.
 
 ### pFUnit 3
@@ -94,15 +94,15 @@ The pFUnit 3 package can also be used on Windows
       @echo off
       title pFUnit configuration
       set PFUNIT=C:\pFUnit3
-      call "C:\Program Files (x86)\Intel\oneAPI\setvars.bat" intel64 vs2019
-      "%VS2019INSTALLDIR%\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" ^
-      -G "Visual Studio 16 2019" ^
+      call "<intel_install_dir>\Intel\oneAPI\setvars.bat" intel64 vs2019
+      "<vs_install_dir>\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" ^
+      -G "Visual Studio 17 2022" ^
       -S %USERPROFILE%\Fedem-src\fedem-foundation\pFUnit\pFUnit-3.3.3 ^
       -B %USERPROFILE%\Fedem-build\pFUnit3 ^
       -DCMAKE_INSTALL_PREFIX=%PFUNIT%
       pause
 
-- Open the generated solution file `%USERPROFILE%\Fedem-build\pFUnit3\pFUnit.sln`
+- Open the generated solution file `%USERPROFILE%\fedem-build\pFUnit3\pFUnit.sln`
   in Visual Studio and build the `INSTALL` target for `Release` configuration.
   This will build and install pFUnit 3 under `C:\pFUnit3`.
 
